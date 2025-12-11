@@ -1,16 +1,18 @@
 import { AlertBox } from './components/AlertBox/AlertBox'
+import { CssBaseline } from '@mui/material'
 import './App.css'
 
 function App() {
 
   return (
     <>
+      <CssBaseline />
       <AlertBox
-        type="success"
-        message="This is a success alert!"
+        type="warning"
+        message="Your profile has been updated successfully!"
         onClose={() => alert('Alert closed!')}
       >
-        <p>Additional content can go here.</p>
+        <p>You can now continue using the application.</p>
       </AlertBox>
     </>
   )

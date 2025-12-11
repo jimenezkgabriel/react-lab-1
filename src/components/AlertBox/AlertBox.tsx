@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import { Alert, AlertTitle } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import type { AlertBoxProps } from '../../types';

@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Alert, AlertTitle } from '@mui/material';
 import Grid from '@mui/material/Grid';
+
 import type { AlertBoxProps } from '../../types';
 
 export const AlertBox: React.FC<AlertBoxProps> = ({

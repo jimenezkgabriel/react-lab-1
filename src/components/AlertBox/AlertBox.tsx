@@ -11,8 +11,8 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
 }) => {
     return (
         <>
-            <Grid container direction="column" sx={{ justifyContent: "center", alignItems: "center", height: "100vh", gap: 2 }}>
-                <Grid size={6}>
+            <Grid container justifyContent={'center'}>
+                <Grid size={{ xs: 12, md: 6 }} >
                     <Alert variant='outlined' onClose={onClose} severity={type} sx={{ borderWidth: 3 }}>
                         <AlertTitle>{message}</AlertTitle>
                         {children}

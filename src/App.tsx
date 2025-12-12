@@ -28,7 +28,7 @@ function App() {
       <CssBaseline />
       <Container sx={{ marginTop: '10%' }}>
         <AlertBox
-          type="warning"
+          type="success"
           message="Your profile has been updated successfully!"
           onClose={() => alert('Alert closed!')}
         >

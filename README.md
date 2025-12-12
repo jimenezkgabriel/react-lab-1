@@ -1,73 +1,17 @@
-# React + TypeScript + Vite
+1. How did you handle optional props in your components?
+> I assign these optional props a default value just in case they're not passed in. I used a ternary operation to display the props if they're undefined or not.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. What considerations did you make when designing the component interfaces?
+> I finally got the chance to dive right into utilizing Material UI (MUI) for React. The MUI grid system had similarities to Bootstrap's grid system so it was a bit familiar to work with. Still getting the hand of getting the CSS layout juuuuuust right. I added responsive breakpoints throughout the profile card.
 
-Currently, two official plugins are available:
+3. How did you ensure type safety across your components?
+> The arguments for the components was wrapped around a Props interface to ensure that props passed in to that component for later destructuring is the right kind of property, including required and optional props. It was handled using React.FC<[YourPropertyInterfaceTypeHere]>. I also constructed objects such as User or Product in App.tsx with their specific typing const user1: User = {}
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+4. What challenges did you face when implementing component composition?
+> The onClick or generic function events were a bit funky to figure out how to add them, especially when they're returning a value from the child; had a TypeScript error that user profile onClick() might return undefined, so I had to handle that.
 
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Sources used:
+[Official React documentation](https://react.dev/learn/your-first-component)
+[Material UI documentation](https://mui.com/material-ui/all-components/)
+[Deploying Vite Projects On GitHub Pages documentation](https://vite.dev/guide/static-deploy)
+[A simple Vite project repo with instructions on how to deploy to GitHub pages](https://github.com/sitek94/vite-deploy-demo)
